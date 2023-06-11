@@ -7,6 +7,7 @@ public class BonusServiceTest {
         BonusMilesService service = new BonusMilesService();
 
         long expected = 30;
+        boolean registered = true;
         long actual = service.calculate(1000, true);
         //System.out.println("1. " + expected + "==?==" + actual);
 
@@ -18,8 +19,9 @@ public class BonusServiceTest {
         BonusMilesService service = new BonusMilesService();
 
         long expected = 500;
+        boolean registered = true;
         long actual = service.calculate(1_000_000, true);
-        //System.out.println("1. " + expected + "==?==" + actual);
+        //System.out.println("2. " + expected + "==?==" + actual);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -28,9 +30,9 @@ public class BonusServiceTest {
     public void testUnregisteredAndUnderLimit() {
         BonusMilesService service = new BonusMilesService();
 
-        long expected = 30;
-        long actual = service.calculate(1_000, boolean folse);
-        //System.out.println("1. " + expected + "==?==" + actual);
+        long expected = 10;
+        long actual = service.calculate(1_000, false);
+        //System.out.println("3. " + expected + "==?==" + actual);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -40,8 +42,8 @@ public class BonusServiceTest {
         BonusMilesService service = new BonusMilesService();
 
         long expected = 500;
-        long actual = service.calculate(1_000_000, boolean folse);
-        //System.out.println("1. " + expected + "==?==" + actual);
+        long actual = service.calculate(1_000_000, false);
+        //System.out.println("4. " + expected + "==?==" + actual);
 
         Assertions.assertEquals(expected, actual);
     }
