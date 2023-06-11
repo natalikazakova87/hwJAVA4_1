@@ -29,7 +29,7 @@ public class BonusServiceTest {
         BonusMilesService service = new BonusMilesService();
 
         long expected = 30;
-        long actual = service.calculate(1000, folse);
+        long actual = service.calculate(1_000, boolean folse);
         //System.out.println("1. " + expected + "==?==" + actual);
 
         Assertions.assertEquals(expected, actual);
@@ -40,7 +40,7 @@ public class BonusServiceTest {
         BonusMilesService service = new BonusMilesService();
 
         long expected = 500;
-        long actual = service.calculate(1_000_000, folse);
+        long actual = service.calculate(1_000_000, boolean folse);
         //System.out.println("1. " + expected + "==?==" + actual);
 
         Assertions.assertEquals(expected, actual);
